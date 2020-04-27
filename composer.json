@@ -2,7 +2,7 @@
     "name": "netwolf103/ecommerce-taobao",
     "description": "1688 product data parse.",
     "type": "library",
-    "license": "GPL",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Zhang Zhao",
