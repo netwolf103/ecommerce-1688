@@ -79,40 +79,26 @@ class Product
 	}
 
 	/**
-	 * Return header
-	 *
-	 * @return array
-	 */
-	public function getHeader(): array
-	{
-		$header = ['Name', 'Sku', 'Url', 'Price', 'Desc'];
-
-		if ($this->images) {
-			$header = array_merge($header, $this->images->getHeader());
-		}
-
-		if ($this->attribute) {
-			$header = array_merge($header, $this->attribute->getHeader());
-		}
-
-		return $header;
-	}
-
-	/**
 	 * Return data
 	 *
 	 * @return array
 	 */
 	public function getData(): array
 	{
-		$data = [$this->name, $this->sku, $this->url, sprintf('%s %.2f', $this->currency, $this->price), $this->desc];
-
-		if ($this->images) {
-			$data = array_merge($data, $this->images->getUrls());
-		}
+		$data = [
+			'Name'		=> $this->name,
+			'Sku'		=> $this->sku,
+			'Url'		=> $this->url,
+			'Price'		=> sprintf('%s %.2f', $this->currency, $this->price),
+			'Desc' 		=> $this->desc,
+		];
 
 		if ($this->attribute) {
 			$data = array_merge($data, $this->attribute->getData());
+		}
+
+		if ($this->images) {
+			$data = array_merge($data, $this->images->getData());
 		}
 
 		return $data;

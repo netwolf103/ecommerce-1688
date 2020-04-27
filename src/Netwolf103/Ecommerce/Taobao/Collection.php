@@ -99,12 +99,9 @@ class Collection
 
 		$fp = fopen($filename, "w");
 
-		fputcsv($fp, $this->product->getHeader());
-
-		$data = array_map(function($item){
-			return $item ?: 'NULL';
-		}, $this->product->getData());
-		fputcsv($fp, $data);
+		foreach ($this->product->getData() as $key => $item) {
+			fputcsv($fp, compact('key', 'item'));
+		}
 
 		fclose($fp);
 

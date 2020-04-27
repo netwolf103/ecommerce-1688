@@ -20,15 +20,16 @@ class Images
 	 *
 	 * @return array
 	 */
-	public function getHeader(): array
+	public function getData(): array
 	{
-		$header = [];
+		$data = [];
 
-		for ($i = 1; $i <= count($this->urls); $i++) { 
-			$header[] = sprintf("Image %d", $i);
+		for ($i = 1; $i <= count($this->urls); $i++) {
+			$key = sprintf("Image %d", $i);
+			$data[$key] = $this->urls[$i-1];
 		}
 
-		return $header;
+		return $data;
 	}
 
 	/**

@@ -30,23 +30,20 @@ class Attribute
 	private $style;
 
 	/**
-	 * Return header
-	 *
-	 * @return array
-	 */
-	public function getHeader(): array
-	{
-		return ['Weight', 'Material', 'Style'];
-	}
-
-	/**
 	 * Return data
 	 *
 	 * @return array
 	 */
 	public function getData(): array
 	{
-		return [$this->weight, $this->material, $this->style];
+		$data[] = [$this->weight, $this->material, $this->style];
+		$data = [
+			'Weight' 	=> $this->weight,
+			'Material' 	=> $this->material,
+			'Style' 	=> $this->style,
+		];
+
+		return $data;
 	}	
 
 	/**
