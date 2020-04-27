@@ -1,0 +1,21 @@
+{
+    "name": "netwolf103/ecommerce-taobao",
+    "description": "1688 product data parse.",
+    "type": "library",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Zhang Zhao",
+            "email": "netwolf103@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Netwolf103\\Ecommerce\\Taobao\\": "src/Netwolf103/Ecommerce/Taobao"
+        }
+    }
+}
