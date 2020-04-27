@@ -16,6 +16,7 @@ composer require netwolf103/ecommerce-taobao
 
 ## Usage
 ```PHP
+<?php
 require_once './vendor/autoload.php';
 
 use Netwolf103\Ecommerce\Taobao\Collection;
@@ -24,11 +25,13 @@ use Netwolf103\Ecommerce\Taobao\Product\Images;
 use Netwolf103\Ecommerce\Taobao\Product\Attribute;
 
 $varDir = sprintf('%s/var', dirname(__FILE__));
+$csvDir = sprintf('%s/1688', $varDir);
 $productHtml = 'demo.html';
 
 $collection = new Collection($productHtml, new Product(new Images, new Attribute));
 $collection
 	->parse()
-	->saveCsv(sprintf('%s/1688/%s.csv', $varDir, $collection->getProduct()->getSku()))
+	->saveCsv(sprintf('%s/%s.csv', $csvDir, $collection->getProduct()->getSku()))
 ;
+?>
 ```
