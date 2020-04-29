@@ -53,7 +53,10 @@ class Collection
 		$this->product->setName($matches[1] ?? '');
 
 		preg_match('/<meta property="og:product:price" content="(.*)">/U', $html, $matches);
-		$this->product->setPrice($matches[1] ?? 0);
+		$price = $matches[1] ?? 0;
+		$price = (float) $price;
+
+		$this->product->setPrice($price);
 
 		preg_match('/<meta property="og:product:currency" content="(.*)">/U', $html, $matches);
 		$this->product->setCurrency($matches[1] ?? 0);
